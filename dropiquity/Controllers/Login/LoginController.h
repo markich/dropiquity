@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LoginController.h
 //  dropiquity
 //
 //  Created by Marcos Jesús Vivar on 9/3/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LoginController : UIViewController
 
 @end
