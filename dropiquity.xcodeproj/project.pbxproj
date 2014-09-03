@@ -133,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				08BA557619B764AA0028EB5B /* Delegate */,
-				08BA557519B764970028EB5B /* External */,
 				08BA557419B7647E0028EB5B /* Storyboards */,
 				08BA557319B764780028EB5B /* Model */,
 				08BA557219B764690028EB5B /* Controllers */,
@@ -196,13 +195,6 @@
 				08BA554F19B75BA10028EB5B /* Main.storyboard */,
 			);
 			name = Storyboards;
-			sourceTree = "<group>";
-		};
-		08BA557519B764970028EB5B /* External */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = External;
 			sourceTree = "<group>";
 		};
 		08BA557619B764AA0028EB5B /* Delegate */ = {
