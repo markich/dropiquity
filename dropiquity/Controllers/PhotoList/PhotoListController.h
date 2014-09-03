@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoListController : UIViewController
+#import <DropboxSDK/DropboxSDK.h>
+
+@class DBRestClient;
+
+@interface PhotoListController : UICollectionViewController <DBRestClientDelegate>
 
 @end

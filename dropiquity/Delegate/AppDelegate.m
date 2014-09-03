@@ -12,7 +12,47 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Set these variables before launching the app
+    NSString* appKey = @"dzlqjs25xhcu2he";
+	NSString* appSecret = @"h89q1wdqiro9mi0";
+	NSString *root = kDBRootDropbox;
+	
+	// Look below where the DBSession is created to understand how to use DBSession in your app
+	
+	NSString* errorMsg = nil;
+	if ([appKey rangeOfCharacterFromSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]].location != NSNotFound)
+    {
+		errorMsg = @"Make sure you set the app key correctly in DBRouletteAppDelegate.m";
+	} else if ([appSecret rangeOfCharacterFromSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]].location != NSNotFound) {
+		errorMsg = @"Make sure you set the app secret correctly in DBRouletteAppDelegate.m";
+	} else if ([root length] == 0) {
+		errorMsg = @"Set your root to use either App Folder of full Dropbox";
+	} else {
+		NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+		NSData *plistData = [NSData dataWithContentsOfFile:plistPath];
+		NSDictionary *loadedPlist =
+        [NSPropertyListSerialization
+         propertyListFromData:plistData mutabilityOption:0 format:NULL errorDescription:NULL];
+		NSString *scheme = [[[[loadedPlist objectForKey:@"CFBundleURLTypes"] objectAtIndex:0] objectForKey:@"CFBundleURLSchemes"] objectAtIndex:0];
+		if ([scheme isEqual:@"db-APP_KEY"]) {
+			errorMsg = @"Set your URL scheme correctly in DBRoulette-Info.plist";
+		}
+	}
+	
+	DBSession* session = [[DBSession alloc] initWithAppKey:appKey appSecret:appSecret root:root];
+	session.delegate = self;
+    
+	[DBSession setSharedSession:session];
+	[DBRequest setNetworkRequestDelegate:self];
+    
+	if (errorMsg != nil)
+    {
+		[[[UIAlertView alloc]
+		   initWithTitle:@"Error Configuring Session" message:errorMsg
+		   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]
+		 show];
+	}
+    
     return YES;
 }
 							
@@ -41,6 +81,47 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    if ([[DBSession sharedSession] handleOpenURL:url])
+    {
+		return YES;
+	}
+	
+	return NO;
+}
+
+#pragma mark -
+#pragma mark DBSessionDelegate methods
+
+- (void)sessionDidReceiveAuthorizationFailure:(DBSession*)session userId:(NSString *)userId
+{
+	self.relinkUserId = userId;
+}
+
+#pragma mark -
+#pragma mark DBNetworkRequestDelegate methods
+
+static int outstandingRequests;
+
+- (void)networkRequestStarted
+{
+	outstandingRequests++;
+	if (outstandingRequests == 1)
+    {
+		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+	}
+}
+
+- (void)networkRequestStopped
+{
+	outstandingRequests--;
+	if (outstandingRequests == 0)
+    {
+		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	}
 }
 
 @end

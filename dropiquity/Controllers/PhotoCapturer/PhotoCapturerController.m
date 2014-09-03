@@ -1,18 +1,18 @@
 //
-//  PhotoListController.m
+//  PhotoCapturerController.m
 //  dropiquity
 //
 //  Created by Marcos Jesús Vivar on 9/3/14.
 //  Copyright (c) 2014 DevSpark. All rights reserved.
 //
 
-#import "PhotoListController.h"
+#import "PhotoCapturerController.h"
 
-@interface PhotoListController ()
+@interface PhotoCapturerController ()
 
 @end
 
-@implementation PhotoListController
+@implementation PhotoCapturerController
 
 - (void)viewDidLoad
 {
@@ -25,27 +25,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark -
-#pragma mark UICollectionViewDataSource
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return nil;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return 1;
-}
-
-#pragma mark -
-#pragma mark UICollectionViewDelegate
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{}*/
-
 
 #pragma mark - Navigation
 

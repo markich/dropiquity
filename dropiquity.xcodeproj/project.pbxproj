@@ -22,11 +22,12 @@
 		08BA556719B75BA10028EB5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08BA556519B75BA10028EB5B /* InfoPlist.strings */; };
 		08BA556919B75BA10028EB5B /* dropiquityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA556819B75BA10028EB5B /* dropiquityTests.m */; };
 		08BA557D19B7685B0028EB5B /* powered-by-dropbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 08BA557C19B7685B0028EB5B /* powered-by-dropbox.png */; };
-		08BA558019B769430028EB5B /* PhotoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA557F19B769430028EB5B /* PhotoListController.m */; };
-		08BA558319B7696F0028EB5B /* PhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA558219B7696F0028EB5B /* PhotoViewerController.m */; };
 		08BA558619B76BFC0028EB5B /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BA558519B76BFC0028EB5B /* DropboxSDK.framework */; };
 		08BA558819B76C1E0028EB5B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BA558719B76C1E0028EB5B /* QuartzCore.framework */; };
 		08BA558A19B76C240028EB5B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BA558919B76C240028EB5B /* Security.framework */; };
+		08BA558D19B7B1460028EB5B /* PhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA558C19B7B1460028EB5B /* PhotoViewerController.m */; };
+		08BA559019B7B1B60028EB5B /* PhotoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA558F19B7B1B60028EB5B /* PhotoListController.m */; };
+		08BA559419B7B7D20028EB5B /* PhotoCapturerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA559319B7B7D20028EB5B /* PhotoCapturerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,13 +61,15 @@
 		08BA556619B75BA10028EB5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08BA556819B75BA10028EB5B /* dropiquityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dropiquityTests.m; sourceTree = "<group>"; };
 		08BA557C19B7685B0028EB5B /* powered-by-dropbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "powered-by-dropbox.png"; path = "Images/powered-by-dropbox.png"; sourceTree = "<group>"; };
-		08BA557E19B769430028EB5B /* PhotoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoListController.h; path = Controllers/PhotoList/PhotoListController.h; sourceTree = "<group>"; };
-		08BA557F19B769430028EB5B /* PhotoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoListController.m; path = Controllers/PhotoList/PhotoListController.m; sourceTree = "<group>"; };
-		08BA558119B7696F0028EB5B /* PhotoViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoViewerController.h; path = Controllers/PhotoViewer/PhotoViewerController.h; sourceTree = "<group>"; };
-		08BA558219B7696F0028EB5B /* PhotoViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoViewerController.m; path = Controllers/PhotoViewer/PhotoViewerController.m; sourceTree = "<group>"; };
 		08BA558519B76BFC0028EB5B /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		08BA558719B76C1E0028EB5B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		08BA558919B76C240028EB5B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		08BA558B19B7B1460028EB5B /* PhotoViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoViewerController.h; path = Controllers/PhotoViewer/PhotoViewerController.h; sourceTree = "<group>"; };
+		08BA558C19B7B1460028EB5B /* PhotoViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoViewerController.m; path = Controllers/PhotoViewer/PhotoViewerController.m; sourceTree = "<group>"; };
+		08BA558E19B7B1B60028EB5B /* PhotoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoListController.h; path = Controllers/PhotoList/PhotoListController.h; sourceTree = "<group>"; };
+		08BA558F19B7B1B60028EB5B /* PhotoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoListController.m; path = Controllers/PhotoList/PhotoListController.m; sourceTree = "<group>"; };
+		08BA559219B7B7D20028EB5B /* PhotoCapturerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoCapturerController.h; path = Controllers/PhotoCapturer/PhotoCapturerController.h; sourceTree = "<group>"; };
+		08BA559319B7B7D20028EB5B /* PhotoCapturerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCapturerController.m; path = Controllers/PhotoCapturer/PhotoCapturerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,7 @@
 		08BA557219B764690028EB5B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				08BA559119B7B6BD0028EB5B /* PhotoCapturer */,
 				08BA557919B764D20028EB5B /* PhotoViewer */,
 				08BA557819B764C40028EB5B /* PhotoList */,
 				08BA557719B764BF0028EB5B /* Login */,
@@ -218,8 +222,8 @@
 		08BA557819B764C40028EB5B /* PhotoList */ = {
 			isa = PBXGroup;
 			children = (
-				08BA557E19B769430028EB5B /* PhotoListController.h */,
-				08BA557F19B769430028EB5B /* PhotoListController.m */,
+				08BA558E19B7B1B60028EB5B /* PhotoListController.h */,
+				08BA558F19B7B1B60028EB5B /* PhotoListController.m */,
 			);
 			name = PhotoList;
 			sourceTree = "<group>";
@@ -227,8 +231,8 @@
 		08BA557919B764D20028EB5B /* PhotoViewer */ = {
 			isa = PBXGroup;
 			children = (
-				08BA558119B7696F0028EB5B /* PhotoViewerController.h */,
-				08BA558219B7696F0028EB5B /* PhotoViewerController.m */,
+				08BA558B19B7B1460028EB5B /* PhotoViewerController.h */,
+				08BA558C19B7B1460028EB5B /* PhotoViewerController.m */,
 			);
 			name = PhotoViewer;
 			sourceTree = "<group>";
@@ -239,6 +243,15 @@
 				08BA557C19B7685B0028EB5B /* powered-by-dropbox.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		08BA559119B7B6BD0028EB5B /* PhotoCapturer */ = {
+			isa = PBXGroup;
+			children = (
+				08BA559219B7B7D20028EB5B /* PhotoCapturerController.h */,
+				08BA559319B7B7D20028EB5B /* PhotoCapturerController.m */,
+			);
+			name = PhotoCapturer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,8 +354,9 @@
 			files = (
 				08BA555419B75BA10028EB5B /* LoginController.m in Sources */,
 				08BA554E19B75BA10028EB5B /* AppDelegate.m in Sources */,
-				08BA558019B769430028EB5B /* PhotoListController.m in Sources */,
-				08BA558319B7696F0028EB5B /* PhotoViewerController.m in Sources */,
+				08BA559419B7B7D20028EB5B /* PhotoCapturerController.m in Sources */,
+				08BA558D19B7B1460028EB5B /* PhotoViewerController.m in Sources */,
+				08BA559019B7B1B60028EB5B /* PhotoListController.m in Sources */,
 				08BA554A19B75BA00028EB5B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
