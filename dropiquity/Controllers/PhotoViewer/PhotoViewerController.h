@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) IBOutlet UIImageView *photoView;
 
+@property (nonatomic, strong) UIImage *photo;
+
 @end

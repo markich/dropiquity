@@ -13,5 +13,11 @@
 @class DBRestClient;
 
 @interface PhotoListController : UICollectionViewController <DBRestClientDelegate>
+{
+    UIActivityIndicatorView * activityIndicator;
+    
+    BOOL working;
+    DBRestClient * restClient;
+}
 
 @end

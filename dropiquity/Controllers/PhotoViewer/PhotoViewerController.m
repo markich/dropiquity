@@ -14,19 +14,23 @@
 
 @implementation PhotoViewerController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize photoView;
+@synthesize photo;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.photoView setImage:self.photo];
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.photoView setImage:self.photo];
 }
 
 - (void)didReceiveMemoryWarning

@@ -21,9 +21,11 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Photos" style:UIBarButtonItemStylePlain target:self action:@selector(didPressPhotos)];
+    
     if ([[DBSession sharedSession] isLinked])
     {
-        [self performSegueWithIdentifier:@"photoListSegue" sender:self];
+        [self didPressPhotos];
     }
 }
 
@@ -63,14 +65,18 @@
 
 - (void)updateButtons
 {
-    NSString *title = [[DBSession sharedSession] isLinked] ? @"Unlink with Dropbox" : @"Link with Dropbox";
+    BOOL isLinked = [[DBSession sharedSession] isLinked];
+    
+    NSString *title = isLinked ? @"Unlink with Dropbox" : @"Link with Dropbox";
     
     [self.linkButton setTitle:title forState:UIControlStateNormal];
+    
+    self.navigationItem.rightBarButtonItem.enabled = isLinked;
 }
 
 - (void)didPressPhotos
 {
-    [self.navigationController pushViewController:self.photoListController animated:YES];
+    [self performSegueWithIdentifier:@"photoListSegue" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5A6C21B5-18C3-4077-9422-23CC61915FD9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>dropiquity</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>056A8A08-3DD9-4D25-A03D-1BD4EE99CB9E</key>
+		<string>ssh://github.com/markich/dropiquity.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>dropiquity.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>056A8A08-3DD9-4D25-A03D-1BD4EE99CB9E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/markich/dropiquity.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>056A8A08-3DD9-4D25-A03D-1BD4EE99CB9E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>056A8A08-3DD9-4D25-A03D-1BD4EE99CB9E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>dropiquity</string>
+		</dict>
+	</array>
+</dict>
+</plist>

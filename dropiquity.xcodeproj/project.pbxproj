@@ -28,6 +28,17 @@
 		08BA558D19B7B1460028EB5B /* PhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA558C19B7B1460028EB5B /* PhotoViewerController.m */; };
 		08BA559019B7B1B60028EB5B /* PhotoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA558F19B7B1B60028EB5B /* PhotoListController.m */; };
 		08BA559419B7B7D20028EB5B /* PhotoCapturerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA559319B7B7D20028EB5B /* PhotoCapturerController.m */; };
+		08BA559719B8963D0028EB5B /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA559619B8963D0028EB5B /* PhotoCell.m */; };
+		08BA559A19B896D30028EB5B /* CellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA559919B896D30028EB5B /* CellBackground.m */; };
+		08BA55A219B899620028EB5B /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BA559C19B899620028EB5B /* 0.jpg */; };
+		08BA55A319B899620028EB5B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BA559D19B899620028EB5B /* 1.jpg */; };
+		08BA55A419B899620028EB5B /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BA559E19B899620028EB5B /* 2.jpg */; };
+		08BA55A519B899620028EB5B /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BA559F19B899620028EB5B /* 3.jpg */; };
+		08BA55A619B899620028EB5B /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BA55A019B899620028EB5B /* 4.jpg */; };
+		08BA55A719B899620028EB5B /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08BA55A119B899620028EB5B /* 5.jpg */; };
+		08BA55A919B8A9630028EB5B /* dropbox-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 08BA55A819B8A9630028EB5B /* dropbox-placeholder.png */; };
+		08C2248219B8DF0900254E06 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 08C2247F19B8DF0900254E06 /* SVProgressHUD.bundle */; };
+		08C2248319B8DF0900254E06 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C2248119B8DF0900254E06 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +81,21 @@
 		08BA558F19B7B1B60028EB5B /* PhotoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoListController.m; path = Controllers/PhotoList/PhotoListController.m; sourceTree = "<group>"; };
 		08BA559219B7B7D20028EB5B /* PhotoCapturerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoCapturerController.h; path = Controllers/PhotoCapturer/PhotoCapturerController.h; sourceTree = "<group>"; };
 		08BA559319B7B7D20028EB5B /* PhotoCapturerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCapturerController.m; path = Controllers/PhotoCapturer/PhotoCapturerController.m; sourceTree = "<group>"; };
+		08BA559519B8963D0028EB5B /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoCell.h; path = "UI Components/PhotoCell.h"; sourceTree = "<group>"; };
+		08BA559619B8963D0028EB5B /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCell.m; path = "UI Components/PhotoCell.m"; sourceTree = "<group>"; };
+		08BA559819B896D30028EB5B /* CellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellBackground.h; path = "UI Components/CellBackground.h"; sourceTree = "<group>"; };
+		08BA559919B896D30028EB5B /* CellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellBackground.m; path = "UI Components/CellBackground.m"; sourceTree = "<group>"; };
+		08BA559C19B899620028EB5B /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 0.jpg; path = Images/samples/0.jpg; sourceTree = "<group>"; };
+		08BA559D19B899620028EB5B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = Images/samples/1.jpg; sourceTree = "<group>"; };
+		08BA559E19B899620028EB5B /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = Images/samples/2.jpg; sourceTree = "<group>"; };
+		08BA559F19B899620028EB5B /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = Images/samples/3.jpg; sourceTree = "<group>"; };
+		08BA55A019B899620028EB5B /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = Images/samples/4.jpg; sourceTree = "<group>"; };
+		08BA55A119B899620028EB5B /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.jpg; path = Images/samples/5.jpg; sourceTree = "<group>"; };
+		08BA55A819B8A9630028EB5B /* dropbox-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dropbox-placeholder.png"; path = "Images/dropbox-placeholder.png"; sourceTree = "<group>"; };
+		08C2247E19B8DF0900254E06 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		08C2247F19B8DF0900254E06 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		08C2248019B8DF0900254E06 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		08C2248119B8DF0900254E06 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +161,10 @@
 		08BA554319B75BA00028EB5B /* dropiquity */ = {
 			isa = PBXGroup;
 			children = (
+				08C2247C19B8DEFD00254E06 /* External */,
 				08BA557619B764AA0028EB5B /* Delegate */,
 				08BA557419B7647E0028EB5B /* Storyboards */,
-				08BA557319B764780028EB5B /* Model */,
+				08BA557319B764780028EB5B /* UI */,
 				08BA557219B764690028EB5B /* Controllers */,
 				08BA555519B75BA10028EB5B /* Images.xcassets */,
 				08BA554419B75BA00028EB5B /* Supporting Files */,
@@ -186,11 +213,15 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		08BA557319B764780028EB5B /* Model */ = {
+		08BA557319B764780028EB5B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				08BA559519B8963D0028EB5B /* PhotoCell.h */,
+				08BA559619B8963D0028EB5B /* PhotoCell.m */,
+				08BA559819B896D30028EB5B /* CellBackground.h */,
+				08BA559919B896D30028EB5B /* CellBackground.m */,
 			);
-			name = Model;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		08BA557419B7647E0028EB5B /* Storyboards */ = {
@@ -240,6 +271,8 @@
 		08BA557B19B765200028EB5B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				08BA55A819B8A9630028EB5B /* dropbox-placeholder.png */,
+				08BA559B19B899530028EB5B /* samples */,
 				08BA557C19B7685B0028EB5B /* powered-by-dropbox.png */,
 			);
 			name = Images;
@@ -252,6 +285,38 @@
 				08BA559319B7B7D20028EB5B /* PhotoCapturerController.m */,
 			);
 			name = PhotoCapturer;
+			sourceTree = "<group>";
+		};
+		08BA559B19B899530028EB5B /* samples */ = {
+			isa = PBXGroup;
+			children = (
+				08BA559C19B899620028EB5B /* 0.jpg */,
+				08BA559D19B899620028EB5B /* 1.jpg */,
+				08BA559E19B899620028EB5B /* 2.jpg */,
+				08BA559F19B899620028EB5B /* 3.jpg */,
+				08BA55A019B899620028EB5B /* 4.jpg */,
+				08BA55A119B899620028EB5B /* 5.jpg */,
+			);
+			name = samples;
+			sourceTree = "<group>";
+		};
+		08C2247C19B8DEFD00254E06 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				08C2247D19B8DF0900254E06 /* SVProgressHUD */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		08C2247D19B8DF0900254E06 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				08C2247E19B8DF0900254E06 /* SVProgressHUD-Prefix.pch */,
+				08C2247F19B8DF0900254E06 /* SVProgressHUD.bundle */,
+				08C2248019B8DF0900254E06 /* SVProgressHUD.h */,
+				08C2248119B8DF0900254E06 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,10 +395,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08BA55A519B899620028EB5B /* 3.jpg in Resources */,
+				08BA55A319B899620028EB5B /* 1.jpg in Resources */,
 				08BA555619B75BA10028EB5B /* Images.xcassets in Resources */,
+				08BA55A619B899620028EB5B /* 4.jpg in Resources */,
+				08BA55A719B899620028EB5B /* 5.jpg in Resources */,
 				08BA554819B75BA00028EB5B /* InfoPlist.strings in Resources */,
+				08BA55A919B8A9630028EB5B /* dropbox-placeholder.png in Resources */,
+				08C2248219B8DF0900254E06 /* SVProgressHUD.bundle in Resources */,
 				08BA557D19B7685B0028EB5B /* powered-by-dropbox.png in Resources */,
 				08BA555119B75BA10028EB5B /* Main.storyboard in Resources */,
+				08BA55A419B899620028EB5B /* 2.jpg in Resources */,
+				08BA55A219B899620028EB5B /* 0.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +428,9 @@
 				08BA555419B75BA10028EB5B /* LoginController.m in Sources */,
 				08BA554E19B75BA10028EB5B /* AppDelegate.m in Sources */,
 				08BA559419B7B7D20028EB5B /* PhotoCapturerController.m in Sources */,
+				08BA559A19B896D30028EB5B /* CellBackground.m in Sources */,
+				08BA559719B8963D0028EB5B /* PhotoCell.m in Sources */,
+				08C2248319B8DF0900254E06 /* SVProgressHUD.m in Sources */,
 				08BA558D19B7B1460028EB5B /* PhotoViewerController.m in Sources */,
 				08BA559019B7B1B60028EB5B /* PhotoListController.m in Sources */,
 				08BA554A19B75BA00028EB5B /* main.m in Sources */,
@@ -570,6 +646,7 @@
 				08BA556E19B75BA10028EB5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		08BA556F19B75BA10028EB5B /* Build configuration list for PBXNativeTarget "dropiquityTests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +655,7 @@
 				08BA557119B75BA10028EB5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
