@@ -120,16 +120,6 @@ NSString *kPhotoCell = @"photoCell";
 }
 
 #pragma mark -
-#pragma mark UICollectionViewDelegate
- 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    PhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kPhotoCell forIndexPath:indexPath];
-    
-    self.photo = cell.image.image;
-}
-
-#pragma mark -
 #pragma mark Private methods
 
 - (void)loadPhotos
@@ -142,7 +132,7 @@ NSString *kPhotoCell = @"photoCell";
     
     if ([DBSession sharedSession].root == kDBRootDropbox)
     {
-        photosRoot = @"/photos";
+        photosRoot = @"/Photos";
     }
     else
     {
@@ -239,8 +229,6 @@ NSString *kPhotoCell = @"photoCell";
 {
     [self setWorking:NO];
     
-    NSLog(@"SUCCESS! I LIKE... HIGH FIVE!");
-    
     if ([self.photoPaths count] == [self.imageCache count])
     {
         [self.collectionView reloadData];
@@ -259,13 +247,17 @@ NSString *kPhotoCell = @"photoCell";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    PhotoCell *cell = (PhotoCell *)sender;
+    
+    self.photo = cell.image.image;
+    
     if([segue.identifier isEqualToString:@"photoViewSegue"])
     {
         PhotoViewerController *destinationController = (PhotoViewerController *)segue.destinationViewController;
         
         if ([destinationController isKindOfClass:[PhotoViewerController class]])
         {
-            destinationController.photo = self.photo;
+            [destinationController setPhoto:self.photo];
         }
     }
 }
