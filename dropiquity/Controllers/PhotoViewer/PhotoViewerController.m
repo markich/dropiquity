@@ -9,7 +9,7 @@
 #import "PhotoViewerController.h"
 
 @interface PhotoViewerController ()
-
+- (void)sharePhoto;
 @end
 
 @implementation PhotoViewerController
@@ -22,6 +22,31 @@
     [super viewDidLoad];
     
     [self.photoView setImage:self.photo];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sharePhoto)];
+}
+
+- (void)sharePhoto
+{
+    NSString *text = @"Photo taken with MyDropiquity";
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[text, self.photo] applicationActivities:nil];
+
+    controller.excludedActivityTypes = @[UIActivityTypePostToWeibo,
+                                         UIActivityTypeMessage,
+                                         UIActivityTypeMail,
+                                         UIActivityTypePrint,
+                                         UIActivityTypePostToTwitter,
+                                         UIActivityTypeCopyToPasteboard,
+                                         UIActivityTypeAssignToContact,
+                                         UIActivityTypeSaveToCameraRoll,
+                                         UIActivityTypeAddToReadingList,
+                                         UIActivityTypePostToFlickr,
+                                         UIActivityTypePostToVimeo,
+                                         UIActivityTypePostToTencentWeibo,
+                                         UIActivityTypeAirDrop];
+    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

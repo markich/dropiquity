@@ -106,6 +106,7 @@
                             <outlet property="delegate" destination="MBE-DG-FEX" id="VPH-pt-IJd"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="Jrc-MT-ttR">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Pxf-Zt-CpA">
                             <connections>
@@ -114,6 +115,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXZ-Bd-3vh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,6 +189,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaU-Fo-equ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="465" y="717"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NhH-0C-sdf">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="b9G-LA-BbA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aPL-uH-h3C"/>
+                        <viewControllerLayoutGuide type="bottom" id="ks5-vn-hKK"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V8g-iq-QZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgv-fs-dIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

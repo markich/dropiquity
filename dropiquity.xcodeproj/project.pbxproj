@@ -39,6 +39,9 @@
 		08BA55A919B8A9630028EB5B /* dropbox-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 08BA55A819B8A9630028EB5B /* dropbox-placeholder.png */; };
 		08C2248219B8DF0900254E06 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 08C2247F19B8DF0900254E06 /* SVProgressHUD.bundle */; };
 		08C2248319B8DF0900254E06 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C2248119B8DF0900254E06 /* SVProgressHUD.m */; };
+		08C2248519B9036E00254E06 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C2248419B9036E00254E06 /* Social.framework */; };
+		08C2248819B9104D00254E06 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C2248619B9104D00254E06 /* map.png */; };
+		08C2248919B9104D00254E06 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C2248719B9104D00254E06 /* pin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,9 @@
 		08C2247F19B8DF0900254E06 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		08C2248019B8DF0900254E06 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		08C2248119B8DF0900254E06 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		08C2248419B9036E00254E06 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		08C2248619B9104D00254E06 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = Images/map.png; sourceTree = "<group>"; };
+		08C2248719B9104D00254E06 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin.png; path = Images/pin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C2248519B9036E00254E06 /* Social.framework in Frameworks */,
 				08BA558A19B76C240028EB5B /* Security.framework in Frameworks */,
 				08BA558819B76C1E0028EB5B /* QuartzCore.framework in Frameworks */,
 				08BA558619B76BFC0028EB5B /* DropboxSDK.framework in Frameworks */,
@@ -147,6 +154,7 @@
 		08BA553C19B75BA00028EB5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08C2248419B9036E00254E06 /* Social.framework */,
 				08BA558919B76C240028EB5B /* Security.framework */,
 				08BA558719B76C1E0028EB5B /* QuartzCore.framework */,
 				08BA558519B76BFC0028EB5B /* DropboxSDK.framework */,
@@ -161,13 +169,13 @@
 		08BA554319B75BA00028EB5B /* dropiquity */ = {
 			isa = PBXGroup;
 			children = (
-				08C2247C19B8DEFD00254E06 /* External */,
-				08BA557619B764AA0028EB5B /* Delegate */,
-				08BA557419B7647E0028EB5B /* Storyboards */,
-				08BA557319B764780028EB5B /* UI */,
 				08BA557219B764690028EB5B /* Controllers */,
+				08BA557619B764AA0028EB5B /* Delegate */,
+				08C2247C19B8DEFD00254E06 /* External */,
 				08BA555519B75BA10028EB5B /* Images.xcassets */,
+				08BA557419B7647E0028EB5B /* Storyboards */,
 				08BA554419B75BA00028EB5B /* Supporting Files */,
+				08BA557319B764780028EB5B /* UI */,
 			);
 			path = dropiquity;
 			sourceTree = "<group>";
@@ -205,10 +213,10 @@
 		08BA557219B764690028EB5B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				08BA559119B7B6BD0028EB5B /* PhotoCapturer */,
-				08BA557919B764D20028EB5B /* PhotoViewer */,
-				08BA557819B764C40028EB5B /* PhotoList */,
 				08BA557719B764BF0028EB5B /* Login */,
+				08BA559119B7B6BD0028EB5B /* PhotoCapturer */,
+				08BA557819B764C40028EB5B /* PhotoList */,
+				08BA557919B764D20028EB5B /* PhotoViewer */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -271,9 +279,11 @@
 		08BA557B19B765200028EB5B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				08C2248619B9104D00254E06 /* map.png */,
+				08C2248719B9104D00254E06 /* pin.png */,
 				08BA55A819B8A9630028EB5B /* dropbox-placeholder.png */,
-				08BA559B19B899530028EB5B /* samples */,
 				08BA557C19B7685B0028EB5B /* powered-by-dropbox.png */,
+				08BA559B19B899530028EB5B /* samples */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -397,6 +407,8 @@
 			files = (
 				08BA55A519B899620028EB5B /* 3.jpg in Resources */,
 				08BA55A319B899620028EB5B /* 1.jpg in Resources */,
+				08C2248819B9104D00254E06 /* map.png in Resources */,
+				08C2248919B9104D00254E06 /* pin.png in Resources */,
 				08BA555619B75BA10028EB5B /* Images.xcassets in Resources */,
 				08BA55A619B899620028EB5B /* 4.jpg in Resources */,
 				08BA55A719B899620028EB5B /* 5.jpg in Resources */,

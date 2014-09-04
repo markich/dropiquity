@@ -73,6 +73,8 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissController];
+    
+    [self popController];
 }
 
 #pragma mark -

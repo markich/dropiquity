@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import <Social/Social.h>
+
 @interface PhotoViewerController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIImageView *photoView;

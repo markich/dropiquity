@@ -85,6 +85,11 @@
     // Pass the selected object to the new view controller.
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    return [[DBSession sharedSession] isLinked];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
