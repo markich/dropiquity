@@ -42,6 +42,12 @@
 		08C2248519B9036E00254E06 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C2248419B9036E00254E06 /* Social.framework */; };
 		08C2248819B9104D00254E06 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C2248619B9104D00254E06 /* map.png */; };
 		08C2248919B9104D00254E06 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C2248719B9104D00254E06 /* pin.png */; };
+		08C2248E19BA04EB00254E06 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C2248C19BA04EB00254E06 /* MapController.m */; };
+		08C2248F19BA04EB00254E06 /* MapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08C2248D19BA04EB00254E06 /* MapController.xib */; };
+		08C2249119BA05A700254E06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C2249019BA05A700254E06 /* MapKit.framework */; };
+		08C2249319BA05B200254E06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C2249219BA05B200254E06 /* CoreLocation.framework */; };
+		08C2249619BA0AE000254E06 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C2249519BA0AE000254E06 /* PhotoAnnotation.m */; };
+		08C2249819BA12FA00254E06 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C2249719BA12FA00254E06 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +108,14 @@
 		08C2248419B9036E00254E06 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		08C2248619B9104D00254E06 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = Images/map.png; sourceTree = "<group>"; };
 		08C2248719B9104D00254E06 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin.png; path = Images/pin.png; sourceTree = "<group>"; };
+		08C2248B19BA04EB00254E06 /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = Controllers/Map/MapController.h; sourceTree = "<group>"; };
+		08C2248C19BA04EB00254E06 /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = Controllers/Map/MapController.m; sourceTree = "<group>"; };
+		08C2248D19BA04EB00254E06 /* MapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapController.xib; path = Controllers/Map/MapController.xib; sourceTree = "<group>"; };
+		08C2249019BA05A700254E06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		08C2249219BA05B200254E06 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		08C2249419BA0AE000254E06 /* PhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoAnnotation.h; path = "UI Components/PhotoAnnotation.h"; sourceTree = "<group>"; };
+		08C2249519BA0AE000254E06 /* PhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoAnnotation.m; path = "UI Components/PhotoAnnotation.m"; sourceTree = "<group>"; };
+		08C2249719BA12FA00254E06 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +123,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C2249819BA12FA00254E06 /* ImageIO.framework in Frameworks */,
+				08C2249319BA05B200254E06 /* CoreLocation.framework in Frameworks */,
+				08C2249119BA05A700254E06 /* MapKit.framework in Frameworks */,
 				08C2248519B9036E00254E06 /* Social.framework in Frameworks */,
 				08BA558A19B76C240028EB5B /* Security.framework in Frameworks */,
 				08BA558819B76C1E0028EB5B /* QuartzCore.framework in Frameworks */,
@@ -154,6 +171,9 @@
 		08BA553C19B75BA00028EB5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08C2249719BA12FA00254E06 /* ImageIO.framework */,
+				08C2249219BA05B200254E06 /* CoreLocation.framework */,
+				08C2249019BA05A700254E06 /* MapKit.framework */,
 				08C2248419B9036E00254E06 /* Social.framework */,
 				08BA558919B76C240028EB5B /* Security.framework */,
 				08BA558719B76C1E0028EB5B /* QuartzCore.framework */,
@@ -213,6 +233,7 @@
 		08BA557219B764690028EB5B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				08C2248A19BA04B900254E06 /* Map */,
 				08BA557719B764BF0028EB5B /* Login */,
 				08BA559119B7B6BD0028EB5B /* PhotoCapturer */,
 				08BA557819B764C40028EB5B /* PhotoList */,
@@ -228,6 +249,8 @@
 				08BA559619B8963D0028EB5B /* PhotoCell.m */,
 				08BA559819B896D30028EB5B /* CellBackground.h */,
 				08BA559919B896D30028EB5B /* CellBackground.m */,
+				08C2249419BA0AE000254E06 /* PhotoAnnotation.h */,
+				08C2249519BA0AE000254E06 /* PhotoAnnotation.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -329,6 +352,16 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		08C2248A19BA04B900254E06 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				08C2248B19BA04EB00254E06 /* MapController.h */,
+				08C2248C19BA04EB00254E06 /* MapController.m */,
+				08C2248D19BA04EB00254E06 /* MapController.xib */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -414,6 +447,7 @@
 				08BA55A719B899620028EB5B /* 5.jpg in Resources */,
 				08BA554819B75BA00028EB5B /* InfoPlist.strings in Resources */,
 				08BA55A919B8A9630028EB5B /* dropbox-placeholder.png in Resources */,
+				08C2248F19BA04EB00254E06 /* MapController.xib in Resources */,
 				08C2248219B8DF0900254E06 /* SVProgressHUD.bundle in Resources */,
 				08BA557D19B7685B0028EB5B /* powered-by-dropbox.png in Resources */,
 				08BA555119B75BA10028EB5B /* Main.storyboard in Resources */,
@@ -439,6 +473,7 @@
 			files = (
 				08BA555419B75BA10028EB5B /* LoginController.m in Sources */,
 				08BA554E19B75BA10028EB5B /* AppDelegate.m in Sources */,
+				08C2248E19BA04EB00254E06 /* MapController.m in Sources */,
 				08BA559419B7B7D20028EB5B /* PhotoCapturerController.m in Sources */,
 				08BA559A19B896D30028EB5B /* CellBackground.m in Sources */,
 				08BA559719B8963D0028EB5B /* PhotoCell.m in Sources */,
@@ -446,6 +481,7 @@
 				08BA558D19B7B1460028EB5B /* PhotoViewerController.m in Sources */,
 				08BA559019B7B1B60028EB5B /* PhotoListController.m in Sources */,
 				08BA554A19B75BA00028EB5B /* main.m in Sources */,
+				08C2249619BA0AE000254E06 /* PhotoAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

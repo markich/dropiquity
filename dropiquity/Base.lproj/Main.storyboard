@@ -108,6 +108,7 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Jrc-MT-ttR">
+                        <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Pxf-Zt-CpA">
                             <connections>
                                 <segue destination="A9o-Wz-h4B" kind="push" identifier="photoCaptureSegue" id="V59-JJ-sgj"/>

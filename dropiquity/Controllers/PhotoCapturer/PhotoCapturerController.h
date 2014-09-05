@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <CoreLocation/CoreLocation.h>
+#import <ImageIO/ImageIO.h>
 
 #import <DropboxSDK/DropboxSDK.h>
 
 @class DBRestClient;
 
-@interface PhotoCapturerController : UIViewController <UIImagePickerControllerDelegate, DBRestClientDelegate>
+@interface PhotoCapturerController : UIViewController <CLLocationManagerDelegate, UIImagePickerControllerDelegate, DBRestClientDelegate>
 {
     UIActivityIndicatorView * activityIndicator;
     
@@ -20,11 +23,14 @@
     DBRestClient * restClient;
 }
 
-@property (nonatomic, weak) IBOutlet UIButton *uploadButton;
+@property (nonatomic, strong) CLLocationManager * locationManager;
+@property (nonatomic, strong) CLLocation * startLocation;
 
-@property (nonatomic, weak) IBOutlet UIImageView *photoView;
+@property (nonatomic, weak) IBOutlet UIButton * uploadButton;
+@property (nonatomic, weak) IBOutlet UIImageView * photoView;
 
-@property (nonatomic, strong) UIImage *photo;
+@property (nonatomic, strong) UIImage * photo;
+@property (nonatomic, strong) NSURL * photoURL;
 
 - (IBAction)uploadDidPressed:(id)sender;
 

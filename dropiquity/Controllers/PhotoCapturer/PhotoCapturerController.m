@@ -9,12 +9,20 @@
 #import "PhotoCapturerController.h"
 
 @interface PhotoCapturerController ()
+- (void)initiateLocationManager;
+- (UIImagePickerController *)initiateImagePicker;
 - (void)uploadPhotoToDropbox;
 @end
 
 @implementation PhotoCapturerController
 
+@synthesize locationManager;
+@synthesize startLocation;
+
 @synthesize photo;
+
+#pragma mark -
+#pragma mark Instantiation
 
 - (void)viewDidLoad
 {
@@ -22,7 +30,25 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(popController)];
     
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    [self initiateLocationManager];
+    
+    UIImagePickerController * imagePicker = [self initiateImagePicker];
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)initiateLocationManager
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+    self.startLocation = nil;
+}
+
+- (UIImagePickerController *)initiateImagePicker
+{
+    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
     [imagePicker setDelegate:self];
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
@@ -41,11 +67,11 @@
     
     [imagePicker setAllowsEditing:YES];
     
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    return imagePicker;
 }
 
 #pragma mark -
-#pragma mark
+#pragma mark IBAction Methods
 
 - (IBAction)uploadDidPressed:(id)sender
 {
@@ -57,24 +83,81 @@
 }
 
 #pragma mark -
-#pragma mark UIImagePickerControllerDelegate
+#pragma mark EXIFGPS
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+- (void)saveImage:(UIImage *)imageToSave withInfo:(NSDictionary *)info
 {
-    UIImage *image = (!info[UIImagePickerControllerEditedImage]) ? info[UIImagePickerControllerEditedImage] : info[UIImagePickerControllerOriginalImage];
+    // Get the image metadata (EXIF & TIFF)
+    NSMutableDictionary * imageMetadata = [[info objectForKey:UIImagePickerControllerMediaMetadata] mutableCopy];
     
-    self.photo = image;
+    CLLocation * location = self.startLocation;
     
-    [self.photoView setImage:self.photo];
+    if (location)
+    {
+        [imageMetadata setObject:[self gpsDictionaryForLocation:location] forKey:(NSString*)kCGImagePropertyGPSDictionary];
+    }
     
-    [self dismissController];
+    // Get the assets library
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    
+    // create a completion block for when we process the image
+    ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock = ^(NSURL *newURL, NSError *error)
+    {
+        if (error)
+        {
+            NSLog( @"Error writing image with metadata to Photo Library: %@", error );
+        }
+        else
+        {
+            NSLog( @"Wrote image %@ with metadata %@ to Photo Library",newURL,imageMetadata);
+            self.photoURL = newURL;
+        }
+    };
+    
+    // Save the new image to the Camera Roll, using the completion block defined just above
+    [library writeImageToSavedPhotosAlbum:[imageToSave CGImage]
+                                 metadata:imageMetadata
+                          completionBlock:imageWriteCompletionBlock];
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+- (NSDictionary *)gpsDictionaryForLocation:(CLLocation *)location
 {
-    [self dismissController];
+    CLLocationDegrees exifLatitude  = location.coordinate.latitude;
+    CLLocationDegrees exifLongitude = location.coordinate.longitude;
     
-    [self popController];
+    NSString * latitudeReference;
+    NSString * longitudeReference;
+    if (exifLatitude < 0.0)
+    {
+        exifLatitude = exifLatitude * -1.0f;
+        latitudeReference = @"S";
+    }
+    else
+    {
+        latitudeReference = @"N";
+    }
+    
+    if (exifLongitude < 0.0)
+    {
+        exifLongitude = exifLongitude * -1.0f;
+        longitudeReference = @"W";
+    }
+    else
+    {
+        longitudeReference = @"E";
+    }
+    
+    NSMutableDictionary *locationDictionary = [[NSMutableDictionary alloc] init];
+    
+    [locationDictionary setObject:location.timestamp forKey:(NSString *)kCGImagePropertyGPSTimeStamp];
+    [locationDictionary setObject:latitudeReference forKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
+    [locationDictionary setObject:[NSNumber numberWithFloat:exifLatitude] forKey:(NSString *)kCGImagePropertyGPSLatitude];
+    [locationDictionary setObject:longitudeReference forKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
+    [locationDictionary setObject:[NSNumber numberWithFloat:exifLongitude] forKey:(NSString *)kCGImagePropertyGPSLongitude];
+    [locationDictionary setObject:[NSNumber numberWithFloat:location.horizontalAccuracy] forKey:(NSString *)kCGImagePropertyGPSDOP];
+    [locationDictionary setObject:[NSNumber numberWithFloat:location.altitude] forKey:(NSString *)kCGImagePropertyGPSAltitude];
+    
+    return locationDictionary;
 }
 
 #pragma mark -
@@ -99,6 +182,8 @@
 	NSData *photoData = [NSData dataWithData:UIImagePNGRepresentation(self.photo)];
 	[photoData writeToFile:localPath atomically:YES];
     
+    //NSString * photoNewURL = [self.photoURL absoluteString];
+    
     // Upload file to Dropbox
     NSString *destDir = @"/Photos";
     
@@ -114,6 +199,43 @@
     }
     
     return restClient;
+}
+
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = (!info[UIImagePickerControllerEditedImage]) ? info[UIImagePickerControllerEditedImage] : info[UIImagePickerControllerOriginalImage];
+    
+    //[self saveImage:image withInfo:info];
+    
+    self.photo = image;
+    
+    [self.photoView setImage:self.photo];
+    
+    [self dismissController];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissController];
+    
+    [self popController];
+}
+
+#pragma mark -
+#pragma mark CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    if (self.startLocation == nil)
+        self.startLocation = newLocation;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Failed to update location due to: %@", [error localizedDescription]);
 }
 
 #pragma mark -

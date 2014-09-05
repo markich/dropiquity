@@ -10,6 +10,7 @@
 
 #import "PhotoViewerController.h"
 #import "PhotoCapturerController.h"
+#import "MapController.h"
 
 #import "PhotoCell.h"
 
@@ -49,6 +50,15 @@ NSString *kPhotoCell = @"photoCell";
     self.photoPaths = [@[] mutableCopy];
     self.photosHash = @"";
     self.imageCache = [[NSMutableDictionary alloc] init];
+    
+    UIView *containerView = [[UIView alloc] initWithFrame:(CGRectMake(147.0, 528.0, 26.0, 21.0))];
+    
+    UIButton *mapButton = [[UIButton alloc] initWithFrame:(CGRectMake(0.0, 0.0, 26.0, 21.0))];
+    [mapButton setBackgroundImage:[UIImage imageNamed:@"map.png"] forState:UIControlStateNormal];
+    [mapButton addTarget:self action:@selector(showMapView) forControlEvents:UIControlEventTouchUpInside];
+    
+    [containerView addSubview:mapButton];
+    [self.view addSubview:containerView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -103,7 +113,7 @@ NSString *kPhotoCell = @"photoCell";
         photoPath = [self.photoPaths objectAtIndex:indexPath.row];
         localPath = [self photoPath:[NSString stringWithFormat:@"photo_%ld",indexPath.row]];
         
-        if (![self.imageCache objectForKey:photoPath])
+        if (![photoPath isEqualToString:[self.imageCache objectForKey:localPath]])
         {
             [self.restClient loadThumbnail:photoPath ofSize:@"iphone_bestfit" intoPath:localPath];
         }
@@ -112,9 +122,9 @@ NSString *kPhotoCell = @"photoCell";
     }
     
     cell.label.text = photoPath;
-    cell.image.image = ([self.imageCache objectForKey:photoPath]) ? [UIImage imageWithContentsOfFile:localPath] : [UIImage imageNamed:@"dropbox-placeholder.png"];
+    cell.image.image = ([self.imageCache objectForKey:localPath]) ? [UIImage imageWithContentsOfFile:localPath] : [UIImage imageNamed:@"dropbox-placeholder.png"];
     
-    [self.imageCache setObject:localPath forKey:photoPath];
+    [self.imageCache setObject:photoPath forKey:localPath];
     
     return cell;
 }
@@ -181,6 +191,14 @@ NSString *kPhotoCell = @"photoCell";
     return restClient;
 }
 
+- (void)showMapView
+{
+    MapController *mapController = [[MapController alloc] initWithNibName:@"MapController" bundle:nil];
+    mapController.imageCache = self.imageCache;
+    
+    [self.navigationController pushViewController:mapController animated:YES];
+}
+
 #pragma mark -
 #pragma mark DBRestClientDelegate
 
@@ -229,7 +247,7 @@ NSString *kPhotoCell = @"photoCell";
 {
     [self setWorking:NO];
     
-    if ([self.photoPaths count] == [self.imageCache count])
+    if (([self.photoPaths count] == [self.imageCache count]) || ([self.photoPaths count] >= 8))
     {
         [self.collectionView reloadData];
     }
